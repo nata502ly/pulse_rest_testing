@@ -7,7 +7,7 @@ test_data = [
 ]
 
 
-@pytest.mark.parametrize('book', test_data)
+@pytest.mark.parametrize('book', test_data, ids=[repr(b) for b in test_data])
 def test_book_creation(app, book):
     response = app.create_object(book)
     # Verification
