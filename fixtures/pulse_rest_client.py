@@ -24,4 +24,5 @@ class PulseRestAPI:
         pass
 
     def delete_object(self, obj):
-        pass
+        response = requests.delete(self.url + str(obj._id) + '/')
+        return response
